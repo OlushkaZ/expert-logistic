@@ -1,0 +1,17 @@
+.main-footer {
+  position: fixed;
+  background-color: #1d1d1d;
+  bottom: 0;
+  width: 100%;
+}
+
+.main-footer__wrapper {
+  display: flex;
+}
+
+.main-footer__links {
+  display: flex;
+  margin-left: auto;
+  list-style: none;
+  padding: 0;
+}
