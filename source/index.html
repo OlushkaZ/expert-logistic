@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <div style="display: none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
   <header class="main-header">
     <nav class="main-nav">
       <div class="container">
@@ -47,15 +50,40 @@
     <section class="main-gallery">
       <div class="slides slides__slide-1 slide-show">
         <div class="slides__bg-img">
-          <img src="img/bg-city-desktop@1x.jpg" width="1440" height="900" alt="дорога в городе">
+          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+          <img src="img/bg-city-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-city-desktop@1x.jpg 1x, img/bg-city-desktop@2x.jpg 2x" alt="дорога в городе">
         </div>
+        <div class="slid__gradient">
         <div class="slides__content-wrapper container">
-          <h2>транспортные решения для бизнеса</h2>
+            <h2>транспортные решения для&nbspбизнеса</h2>
+            <p>«Эксперт-логистик» предоставляет полный комплекс транспортных услуг для вашей компании</p>
+            <div class="slides__details-wrapper">
+              <a class="slides__details-button button" href=#>Подробнее</a>
+              <ul class="slides__details">
+                <li>
+                  <b>6000</b>
+                  <span>единиц</span>
+                  <p>автопарк</p>
+                </li>
+                <li>
+                  <b>35</b>
+                  <span>локаций</span>
+                  <p>по всей России</p>
+                </li>
+                <li>
+                  <b>14</b>
+                  <span>лет</span>
+                  <p>на рынке</p>
+                </li>
+              </ul>
+          </div>
         </div>
+      </div>
       </div>
       <div class="slides slides__slide-2">
         <div class="slides__bg-img">
-          <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" alt="экскаватор">
+          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+          <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
         </div>
         <div class="slides__content-wrapper container">
           <h2>контролируем весь цикл логистики</h2>
@@ -63,29 +91,43 @@
       </div>
       <div class="slides slides__slide-3">
         <div class="slides__bg-img">
-          <img src="img/bg-truck-desktop@1x.jpg" width="1440" height="900" alt="экскаватор">
+          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+          <img src="img/bg-truck-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-truck-desktop@1x.jpg 1x, img/bg-truck-desktop@2x.jpg 2x" alt="фура">
         </div>
         <div class="slides__content-wrapper container">
-          <h2>контролируем весь цикл логистики</h2>
+          <h2>нас выбрали</h2>
         </div>
       </div>
       <div class="slides slides__slide-4">
         <div class="slides__bg-img">
-          <img src="img/bg-pixelMap-desktop@1x.png" width="1440" height="900" alt="экскаватор">
+          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+          <img src="img/bg-pixelMap-desktop@1x.png" width="1440" height="900" srcset="img/bg-pixelMap-desktop@1x.png 1x, img/bg-pixelMap-desktop@2x.png 2x" alt="карта">
         </div>
         <div class="slides__content-wrapper container">
-          <h2>контролируем весь цикл логистики</h2>
+          <h2>обширная география</h2>
         </div>
       </div>
-      <div class="slides__thumbnails">
-        <div class="slides__thumbnails-item slides__thumbnail-current">
-        </div>
-        <div class="slides__thumbnails-item">
-        </div>
-        <div class="slides__thumbnails-item">
-        </div>
-        <div class="slides__thumbnails-item">
-        </div>
+      <div class="slides__thumbnails container">
+        <button class="slides__thumbnails-item slides__thumbnail-current">
+          <svg class="slides__thumbnails-img" width="64" height="12">
+            <use xlink:href="#icon-thick-arrow"></use>
+          </svg>
+        </button>
+        <button class="slides__thumbnails-item">
+          <svg class="slides__thumbnails-img" width="64" height="12">
+            <use xlink:href="#icon-thick-arrow"></use>
+          </svg>
+        </button>
+        <button class="slides__thumbnails-item">
+          <svg class="slides__thumbnails-img" width="64" height="12">
+            <use xlink:href="#icon-thick-arrow"></use>
+          </svg>
+        </button>
+        <button class="slides__thumbnails-item">
+          <svg class="slides__thumbnails-img" width="64" height="12">
+            <use xlink:href="#icon-thick-arrow"></use>
+          </svg>
+        </button>
       </div>
     </section>
   </main>
@@ -101,7 +143,7 @@
       </ul>
     </div>
   </footer>
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
