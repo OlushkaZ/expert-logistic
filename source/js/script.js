@@ -21,9 +21,13 @@ var addThumbnailClickHandler = function (number) {
   thumbnailsSlides[number].addEventListener('click', function () {
     for (var j = 0; j < slides.length; j++) {
       slides[j].classList.remove('slide-show');
+      slides[j].classList.remove('slides--opacity');
       thumbnailsSlides[j].classList.remove('slides__thumbnail-current');
     }
     slides[number].classList.add('slide-show');
+    setTimeout(function () {
+      slides[number].classList.add('slides--opacity');
+    }, 100);
     thumbnailsSlides[number].classList.add('slides__thumbnail-current');
   });
 };
