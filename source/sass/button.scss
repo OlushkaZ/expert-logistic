@@ -3,7 +3,7 @@
   box-sizing: border-box;
   min-width: 100px;
   margin: 0;
-  padding: 23px 62px 24px 30px;
+  padding: 23px 31px 24px 30px;
   appearance: none;
 
   font-family: "Montserrat", "Arial", sans-serif;
@@ -16,9 +16,6 @@
   text-transform: uppercase;
   color: #ffffff;
   background-color: transparent;
-  background-image: url("../img/icon-arrow.svg");
-  background-repeat: no-repeat;
-  background-position: 150px 27px;
   border: 1px solid #ffffff;
   cursor: pointer;
 }
@@ -30,4 +27,18 @@
 
 .button:active {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button span {
+  display: flex;
+  align-items: center;
+}
+
+.button span::after {
+  content: "";
+  width: 32px;
+  height: 9px;
+  background-image: url("../img/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position-x: 11px;
 }
