@@ -1,7 +1,8 @@
 .main-footer {
-  position: fixed;
+  margin-top: auto;
+  // position: fixed;
   background-color: #1d1d1d;
-  bottom: 0;
+  // bottom: 0;
   width: 100%;
 }
 
@@ -16,3 +17,12 @@
   list-style: none;
   padding: 0;
 }
+
+// footer {
+//   margin-top: auto;
+//   background-color: #000000;
+//   min-height: 54px;
+//   display: flex;
+//   align-items: center;
+//   width: 100%;
+// }

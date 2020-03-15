@@ -13,11 +13,12 @@
   <div style="display: none">
     <include src="build/img/sprite_auto.svg"></include>
   </div>
-  <header class="main-header">
-    <nav class="main-nav container">
-        <div class="main-nav__wrapper">
+  <div class="wrapper">
+    <header class="main-header">
+      <nav class="main-nav container">
+        <!-- <div class="main-nav__wrapper"> -->
           <a class="main-nav__logo">
-            <img src="img/logo-desktop.svg" width="132" height="120" alt="Логотип эксперт логистик">
+            <img src="img/logo-desktop.svg" width="132" height="120" alt="Логотип эксперт логистик"/>
           </a>
           <ul class="site-navigation">
             <li class="site-navigation__item">
@@ -40,120 +41,342 @@
             </li>
           </ul>
           <a class="main-nav__phone" href="tel:+74953633020" aria-label="телефон компании эксперт логистик">+7 (495) 363-30-20</a>
-        </div>
-    </nav>
-  </header>
-  <main>
-    <h1 class="visually-hidden">Главная страница компании «Эксперт логистик»</h1>
-    <section class="main-gallery">
-      <div class="slides slides__slide-1 slide-show slides--opacity">
-        <div class="slides__bg-img">
-          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
-          <img src="img/bg-city-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-city-desktop@1x.jpg 1x, img/bg-city-desktop@2x.jpg 2x" alt="дорога в городе">
-          <div class="slides__gradient">
-          </div>
-        </div>
-        <div class="slides__content-wrapper container">
-          <h2>транспортные решения для бизнеса</h2>
-          <p>«Эксперт-логистик» предоставляет полный комплекс транспортных услуг для вашей компании</p>
-          <div class="slides__details-wrapper">
-            <a class="slides__details-button button" href=#><span>Подробнее</span></a>
-            <ul class="slides__details">
-              <li>
-                <b>6000</b>
-                <span>единиц</span>
-                <p>автопарк</p>
-              </li>
-              <li>
-                <b>35</b>
-                <span>локаций</span>
-                <p>по всей России</p>
-              </li>
-              <li>
-                <b>14</b>
-                <span>лет</span>
-                <p>на рынке</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <!-- </div> -->
+      </nav>
+    </header>
+    <main>
+      <h1 class="visually-hidden">Главная страница компании «Эксперт логистик»</h1>
+      <section class="slider-section">
+        <ul class="slide-list">
+          <li class="slide-list__item">
+            <div class="slide-list__img">
+              <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+              <img src="img/bg-city-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-city-desktop@1x.jpg 1x, img/bg-city-desktop@2x.jpg 2x" alt="дорога в городе"/>
+            </div>
+            <div class="slide-list__content container">
+              <h2>транспортные решения для бизнеса</h2>
+              <p>«Эксперт-логистик» предоставляет полный комплекс транспортных услуг для вашей компании</p>
+              <div class="slide-list__details-wrapper">
+              <a class="slide-list__details-button button" href=#><span>Подробнее</span></a>
+              <ul class="slide-list__details">
+                <li>
+                  <b>6000</b>
+                  <span>единиц</span>
+                  <p>автопарк</p>
+                </li>
+                <li>
+                  <b>35</b>
+                  <span>локаций</span>
+                  <p>по всей России</p>
+                </li>
+                <li>
+                  <b>14</b>
+                  <span>лет</span>
+                  <p>на рынке</p>
+                </li>
+              </ul>
+              </div>
+            </div>
+          </li>
+          <li class="slide-list__item opacity-none display-none">
+            <div class="slide-list__img">
+              <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+              <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
+            </div>
+            <div class="slide-list__content container">
+              <h2>контролируем весь цикл логистики</h2>
+              <ul class="slides__services">
+                <li>
+                  <div>
+                    <svg width="56" height="28">
+                      <use xlink:href="#icon-passenger-vehicl"></use>
+                    </svg>
+                  </div>
+                  <p>Легковой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="31">
+                      <use xlink:href="#icon-truck"></use>
+                    </svg>
+                  </div>
+                  <p>Грузовой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="33">
+                      <use xlink:href="#icon-passenger-transport"></use>
+                    </svg>
+                  </div>
+                  <p>Пассажирский транспорт jal;fjb ja ;bja;l fbj;sljb f;lakjsb f;lakjsf b;lsfkjdjks;kj;lkj;ldj;kaj;lajf;lkj bj s;lk;aksjbjsb;kaj lskj;aj f;ljakj;akj ljb;lkb js</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="60" height="40">
+                      <use xlink:href="#icon-special-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Спецтехника</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="52" height="34">
+                      <use xlink:href="#icon-mining-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Горнодобывающая техникa</p>
+                </li>
+              </ul>
+              <a class="slides__services-button button" href=#><span>Услуги</span></a>
+            </div>
+          </li>
+          <li class="slide-list__item opacity-none display-none">
+            <div class="slide-list__img">
+              <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+              <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
+            </div>
+            <div class="slide-list__content container">
+              <h2>контролируем весь цикл логистики</h2>
+              <ul class="slides__services">
+                <li>
+                  <div>
+                    <svg width="56" height="28">
+                      <use xlink:href="#icon-passenger-vehicl"></use>
+                    </svg>
+                  </div>
+                  <p>Легковой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="31">
+                      <use xlink:href="#icon-truck"></use>
+                    </svg>
+                  </div>
+                  <p>Грузовой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="33">
+                      <use xlink:href="#icon-passenger-transport"></use>
+                    </svg>
+                  </div>
+                  <p>Пассажирский транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="60" height="40">
+                      <use xlink:href="#icon-special-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Спецтехника</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="52" height="34">
+                      <use xlink:href="#icon-mining-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Горнодобывающая техникa</p>
+                </li>
+              </ul>
+              <a class="slides__services-button button" href=#><span>Услуги</span></a>
+            </div>
+          </li>
+          <li class="slide-list__item opacity-none display-none">
+            <div class="slide-list__img">
+              <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+              <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
+            </div>
+            <div class="slide-list__content container">
+              <h2>контролируем весь цикл логистики</h2>
+              <ul class="slides__services">
+                <li>
+                  <div>
+                    <svg width="56" height="28">
+                      <use xlink:href="#icon-passenger-vehicl"></use>
+                    </svg>
+                  </div>
+                  <p>Легковой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="31">
+                      <use xlink:href="#icon-truck"></use>
+                    </svg>
+                  </div>
+                  <p>Грузовой транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="56" height="33">
+                      <use xlink:href="#icon-passenger-transport"></use>
+                    </svg>
+                  </div>
+                  <p>Пассажирский транспорт</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="60" height="40">
+                      <use xlink:href="#icon-special-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Спецтехника</p>
+                </li>
+                <li>
+                  <div>
+                    <svg width="52" height="34">
+                      <use xlink:href="#icon-mining-equipment"></use>
+                    </svg>
+                  </div>
+                  <p>Горнодобывающая техникa</p>
+                </li>
+              </ul>
+              <a class="slides__services-button button" href=#><span>Услуги</span></a>
+            </div>
+          </li>
+        </ul>
+        <ul class="slide-list__controls">
+          <li>
+            <button class="slide-list__slide-btn active" type="button" aria-label="Первый слайд">
+              <svg class="slides__thumbnails-img" width="64" height="12">
+                <use xlink:href="#icon-thick-arrow"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="slide-list__slide-btn" type="button" aria-label="Первый слайд">
+              <svg class="slides__thumbnails-img" width="64" height="12">
+                <use xlink:href="#icon-thick-arrow"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="slide-list__slide-btn" type="button" aria-label="Первый слайд">
+              <svg class="slides__thumbnails-img" width="64" height="12">
+                <use xlink:href="#icon-thick-arrow"></use>
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button class="slide-list__slide-btn" type="button" aria-label="Первый слайд">
+              <svg class="slides__thumbnails-img" width="64" height="12">
+                <use xlink:href="#icon-thick-arrow"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
 
+
+
+    <!-- <div class="slides slides__slide-1 slide-show slides--opacity"> -->
+    <!-- <div class="slides__bg-img"> -->
+      <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+      <!-- <img src="img/bg-city-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-city-desktop@1x.jpg 1x, img/bg-city-desktop@2x.jpg 2x" alt="дорога в городе">
+      <div class="slides__gradient">
       </div>
-      <div class="slides slides__slide-2">
-        <div class="slides__bg-img">
-          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
-          <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
-          <div class="slides__gradient">
-          </div>
-        </div>
-        <div class="slides__content-wrapper container">
-          <h2>контролируем весь цикл логистики</h2>
-          <ul class="slides__services">
-            <li>
-              <div>
-              <svg width="56" height="28">
-                <use xlink:href="#icon-passenger-vehicl"></use>
-              </svg>
-            </div>
-              <p>Легковой транспорт</p>
-            </li>
-            <li>
-              <div>
-              <svg width="56" height="31">
-                <use xlink:href="#icon-truck"></use>
-              </svg>
-            </div>
-              <p>Грузовой транспорт</p>
-            </li>
-            <li>
-              <div>
-              <svg width="56" height="33">
-                <use xlink:href="#icon-passenger-transport"></use>
-              </svg>
-            </div>
-              <p>Пассажирский транспорт jal;fjb ja ;bja;l fbj;sljb f;lakjsb f;lakjsf b;lsfkjdjks;kj;lkj;ldj;kaj;lajf;lkj bj s;lk;aksjbjsb;kaj lskj;aj f;ljakj;akj ljb;lkb js</p>
-            </li>
-            <li>
-              <div>
-              <svg width="60" height="40">
-                <use xlink:href="#icon-special-equipment"></use>
-              </svg>
-            </div>
-              <p>Спецтехника</p>
-            </li>
-            <li>
-              <div>
-              <svg width="52" height="34">
-                <use xlink:href="#icon-mining-equipment"></use>
-              </svg>
-            </div>
-              <p>Горнодобывающая техникa</p>
-            </li>
-          </ul>
-          <a class="slides__services-button button" href=#><span>Услуги</span></a>
-        </div>
+    </div>
+    <div class="slides__content-wrapper container">
+      <h2>транспортные решения для бизнеса</h2>
+      <p>«Эксперт-логистик» предоставляет полный комплекс транспортных услуг для вашей компании</p>
+      <div class="slides__details-wrapper">
+        <a class="slides__details-button button" href=#><span>Подробнее</span></a>
+        <ul class="slides__details">
+          <li> -->
+            <!-- <b>6000</b>
+            <span>единиц</span>
+            <p>автопарк</p>
+          </li>
+          <li>
+            <b>35</b>
+            <span>локаций</span>
+            <p>по всей России</p>
+          </li>
+          <li>
+            <b>14</b>
+            <span>лет</span>
+            <p>на рынке</p>
+          </li>
+        </ul>
       </div>
-      <div class="slides slides__slide-3">
-        <div class="slides__bg-img">
-          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
-          <img src="img/bg-truck-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-truck-desktop@1x.jpg 1x, img/bg-truck-desktop@2x.jpg 2x" alt="фура">
-          <div class="slides__gradient">
-          </div>
-        </div>
-        <div class="slides__content-wrapper container">
-          <h2>нас выбрали</h2>
-        </div>
-      </div>
-      <div class="slides slides__slide-4">
-        <div class="slides__bg-img">
-          <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
-          <img src="img/bg-pixelMap-desktop@1x.png" width="1440" height="900" srcset="img/bg-pixelMap-desktop@1x.png 1x, img/bg-pixelMap-desktop@2x.png 2x" alt="карта">
-        </div>
-        <div class="slides__content-wrapper container">
-          <h2>обширная география</h2>
-        </div>
-      </div>
-      <div class="slides__thumbnails container">
+    </div>
+  </div> -->
+  <!-- <div class="slides slides__slide-2"> -->
+  <!-- <div class="slides__bg-img"> -->
+  <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+  <!-- <img src="img/bg-excavator-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-excavator-desktop@1x.jpg 1x, img/bg-excavator-desktop@2x.jpg 2x" alt="экскаватор">
+  <div class="slides__gradient">
+  </div>
+  </div> -->
+  <!-- <div class="slides__content-wrapper container"> -->
+  <!-- <h2>контролируем весь цикл логистики</h2> -->
+  <!-- <ul class="slides__services"> -->
+  <!-- <li>
+    <div>
+      <svg width="56" height="28">
+        <use xlink:href="#icon-passenger-vehicl"></use>
+      </svg>
+    </div>
+    <p>Легковой транспорт</p>
+  </li>
+  <li>
+    <div>
+      <svg width="56" height="31">
+        <use xlink:href="#icon-truck"></use>
+      </svg>
+    </div>
+    <p>Грузовой транспорт</p>
+  </li>
+  <li>
+    <div>
+      <svg width="56" height="33">
+        <use xlink:href="#icon-passenger-transport"></use>
+      </svg> -->
+    <!-- </div>
+    <p>Пассажирский транспорт jal;fjb ja ;bja;l fbj;sljb f;lakjsb f;lakjsf b;lsfkjdjks;kj;lkj;ldj;kaj;lajf;lkj bj s;lk;aksjbjsb;kaj lskj;aj f;ljakj;akj ljb;lkb js</p>
+  </li>
+  <li>
+    <div>
+      <svg width="60" height="40">
+        <use xlink:href="#icon-special-equipment"></use>
+      </svg>
+    </div>
+    <p>Спецтехника</p>
+  </li>
+  <li>
+    <div>
+      <svg width="52" height="34">
+        <use xlink:href="#icon-mining-equipment"></use>
+      </svg>
+    </div>
+    <p>Горнодобывающая техникa</p>
+  </li>
+  </ul> -->
+  <!-- <a class="slides__services-button button" href=#><span>Услуги</span></a> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="slides slides__slide-3"> -->
+  <!-- <div class="slides__bg-img"> -->
+  <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+  <!-- <img src="img/bg-truck-desktop@1x.jpg" width="1440" height="900" srcset="img/bg-truck-desktop@1x.jpg 1x, img/bg-truck-desktop@2x.jpg 2x" alt="фура"> -->
+  <!-- <div class="slides__gradient"> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="slides__content-wrapper container"> -->
+  <!-- <h2>нас выбрали</h2> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="slides slides__slide-4"> -->
+  <!-- <div class="slides__bg-img"> -->
+  <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+  <!-- <img src="img/bg-pixelMap-desktop@1x.png" width="1440" height="900" srcset="img/bg-pixelMap-desktop@1x.png 1x, img/bg-pixelMap-desktop@2x.png 2x" alt="карта"> -->
+  <!-- </div> -->
+  <!-- <div class="slides__content-wrapper container"> -->
+  <!-- <h2>обширная география</h2> -->
+  <!-- </div> -->
+  <!-- </div> -->
+  <!-- <div class="slides__thumbnails container">
         <button type="button" class="slides__thumbnails-item slides__thumbnail-current" aria-label="слайд 1">
           <svg class="slides__thumbnails-img" width="64" height="12">
             <use xlink:href="#icon-thick-arrow"></use>
@@ -175,8 +398,8 @@
           </svg>
         </button>
       </div>
-    </section>
-  </main>
+    </section> -->
+  <!-- </main> -->
   <footer class="main-footer">
     <div class="main-footer__wrapper container">
       <p class="main-footer__copyright">ООО «Экспрет логистик» © 2019</p>
@@ -193,6 +416,7 @@
       </ul>
     </div>
   </footer>
+  </div>
   <script src="js/script.js"></script>
 </body>
 
