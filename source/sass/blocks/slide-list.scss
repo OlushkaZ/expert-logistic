@@ -25,9 +25,9 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
+  // height: 100vh;
   top: 0;
-  left: 0;
+  bottom: 0;
   background-image: linear-gradient(218.77deg, #703c26 13.28%, #424c53 85.15%);
   opacity: 0.85;
 }
@@ -40,21 +40,25 @@
 
 .slide-list__content {
   z-index: 1;
-  padding-top: 200px;
+  padding-top: 240px;
+  padding-left: 80px;
+  padding-bottom: 124px;
 }
 
 .slide-list__controls {
-  position: absolute;
-  bottom: 150px;
-  max-width: 1440px;
-  height: 54px;
-  left: 30px;
+  position: relative;
+  top: -50px;
+  // left: 30px;
+  // max-width: 1440px;
+  // height: 54px;
   display: flex;
   justify-content: flex-start;
   z-index: 2;
   list-style: none;
-  margin: 0;
+  margin: 0 auto -30px auto;
+  // margin-bottom: -30px;
   padding: 0;
+  padding-left: 80px;
 }
 
 .slide-list__slide-btn {
@@ -120,6 +124,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 13px;
 }
 
 .slide-list__details li {
@@ -129,9 +134,10 @@
   margin-right: 64px;
 }
 
-.slide-list__details p {
+.slide-list__details li p {
   width: 100%;
   margin: 0;
+  margin-top: 0;
   padding-top: 9px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
@@ -155,7 +161,7 @@
 }
 
 .slide-list__details-button {
-  margin-bottom: 28px;
+  margin-bottom: 27px;
 }
 
 .slide-list__services {
@@ -213,6 +219,68 @@
   padding: 23px 49px 23px 52px;
 }
 
+.slide-list__clients {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  margin-top: 64px;
+  margin-bottom: 78px;
+  padding: 0;
+}
+
+.slide-list__clients li {
+  display: flex;
+  align-items: center;
+}
+
+.slide-list__clients li:not(:first-child) {
+  margin-left: 49px;
+}
+
+.slide-list__clients li:not(:last-child)::after {
+  content: "";
+  background-image: url("../img/icon-logo-arrow.svg");
+  width: 25px;
+  height: 86px;
+}
+
+.slide-list__clients-button {
+  margin-top: 2px;
+  padding: 23px 21px 23px 25px;
+}
+
+.slide-list__geography-wrapper {
+  display: flex;
+}
+
+.slide-list__geography-wrapper img {
+  position: absolute;
+  top: 286px;
+  right: 1.5%;
+}
+
+.slide-list__geography-content p {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-list__geography-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45%;
+  min-height: 356px;
+  flex-shrink: 0;
+  padding-top: 37px;
+}
+
+.slide-list__geography-button {
+  margin-top: auto;
+  padding: 23px 41px 23px 45px;
+}
+
 .slide-list__slide-btn svg {
   fill: #ffffff;
 }
@@ -221,9 +289,9 @@
   fill: #e75333;
 }
 
-@media (min-width: 1440px) {
-  .slide-list__controls {
-    left: 50%;
-    transform: translateX(-700px);
-  }
-}
+// @media (min-width: 1440px) {
+//   .slide-list__controls {
+//     left: 50%;
+//     transform: translateX(-700px);
+//   }
+// }
