@@ -1,0 +1,43 @@
+.message {
+  padding-left: 3px;
+  margin-bottom: 153px;
+}
+
+.message__wrapper {
+  display: flex;
+  position: relative;
+  padding-top: 27px;
+}
+
+.message__wrapper::before {
+  content: "";
+  position: absolute;
+  right: 85px;
+  bottom: 18px;
+  width: 200px;
+  height: 142px;
+  background-image: url("../img/signature.svg");
+}
+
+.message__img {
+  width: 40%;
+  padding-right: 20px;
+}
+
+.message__text {
+  width: 60%;
+  padding-top: 30px;
+  padding-right: 6.5%;
+  padding-bottom: 145px;
+}
+
+.message p {
+  margin: 0;
+  margin-bottom: 27px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+  color: #ffffff;
+}
