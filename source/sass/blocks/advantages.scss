@@ -1,0 +1,36 @@
+.advantages {
+  margin-bottom: 50px;
+}
+
+.advantages__details {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  margin-top: 64px;
+  padding: 0;
+}
+
+.advantages__details li {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-right: 4.8%;
+  align-items: center;
+}
+
+.advantages__details svg {
+  margin-bottom: 31px;
+}
+
+.advantages__details li p {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: #ffffff;
+}
