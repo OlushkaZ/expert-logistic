@@ -3,7 +3,7 @@
   left: 0;
   right: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   // width: calc(100% - 60px);
   // height: 54px;
   // left: 30px;
@@ -11,20 +11,32 @@
   // padding-bottom: 15px;
 }
 
-.main-nav__wrapper {
-  display: flex;
-  align-items: center;
-}
+// .main-nav__wrapper {
+//   display: flex;
+//   align-items: center;
+// }
 
 .main-nav__phone {
+  margin-top: 41px;
+  margin-left: 65px;
+  margin-right: 18px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
 }
 
 .main-nav__logo {
+  display: flex;
+  width: 132px;
+  height: 120px;
   background-color: #ffffff;
+}
+
+.main-nav__logo img {
+  margin: auto auto;
 }
