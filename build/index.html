@@ -207,21 +207,20 @@
             </div>
           </li>
           <li class="slide-list__item opacity-none display-none">
-            <div class="slide-list__img">
-              <!-- 1х: 1121px*857px; 2x: 2241px*1713px -->
-              <img src="img/bg-pixelMap-desktop@1x.png" width="1121" height="857" srcset="img/bg-pixelMap-desktop@1x.png 1x, img/bg-pixelMap-desktop@2x.png 2x" alt="карта">
+            <div class="slide-list__img slide-list__img--back-gradient ">
+              <!-- 1х: 1440px*900px; 2x: 2880px*1800px -->
+              <img src="img/bg-pixelMap-desktop@1x.png" width="1440" height="900" srcset="img/bg-pixelMap-desktop@1x.png 1x, img/bg-pixelMap-desktop@2x.png 2x" alt="карта">
             </div>
             <div class="slide-list__content container">
               <h2>обширная география</h2>
-              <div class="slide-list__geography-wrapper">
+              <!-- <div class="slide-list__geography-wrapper"> -->
                 <div class="slide-list__geography-content">
-
                   <p>«Эксперт-логистик» насчитывает более 20 филиалов</p>
                   <p>и 35 производственных участков на территории РФ</p>
                   <a class="slide-list__geography-button button" href="#"><span>Регионы</span></a>
                 </div>
-                <img class="slide-list__geography-img" src="img/map-points.svg" width="1050" height="543" alt="карта клиентов">
-              </div>
+                <!-- <img class="slide-list__geography-img" src="img/map-points.svg" width="1050" height="543" alt="карта клиентов"> -->
+              <!-- </div> -->
             </div>
           </li>
         </ul>
@@ -259,15 +258,18 @@
     </main>
     <footer class="main-footer">
       <div class="main-footer__wrapper container">
-        <p class="main-footer__copyright">ООО «Экспрет логистик» © 2019</p>
-        <a href="#" download="" aria-label="загрузить презентацию">
+        <div class="main-footer__wrapper-copyright">
+          <p class="main-footer__copyright">ООО «Экспрет логистик» © 2019</p>
+          <a class="main-footer__link main-footer__link--download" href="#" download="">Скачать презентацию</a>
+        <!-- <a href="#" download="" aria-label="загрузить презентацию">
           <svg width="14" height="14">
             <use xlink:href="#icon-download"></use>
-          </svg>
+          </svg> -->
           <!-- <img src="img/icon-download.svg" alt="скачать" /> -->
-        </a>
+          
+      </div>
         <ul class="main-footer__links">
-          <li class="main-footer__links-item"><a class="main-footer__link" href="#">Безопасность</a></li>
+          <li class="main-footer__links-item"><a class="main-footer__link main-footer__link--leaf" href="#">Безопасность</a></li>
           <li class="main-footer__links-item"><a class="main-footer__link" href="#">Лицензии и сертификаты</a></li>
           <li class="main-footer__links-item"><a class="main-footer__link" href="#">Вакансии</a></li>
         </ul>
