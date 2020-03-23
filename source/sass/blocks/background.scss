@@ -17,17 +17,27 @@
   // z-index: 3;
 }
 
-// .background__about {
-//   background-image:  linear-gradient(to left, rgba(110, 59, 38, 0.85), rgba(66, 76, 83, 0.85)),
-//     url("../img/bg-port-desktop@1x.jpg");
-// }
 .background__about {
   background-image: url("../img/bg-port-desktop@1x.jpg");
+}
+
+.background__services {
+  background-image: url("../img/bg-city-desktop@1x.jpg");
+  background-attachment: scroll;
+}
+
+.background__services::before {
+  position: absolute;
 }
 
 @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
   .background__about {
     background-image: url("../img/bg-port-desktop@2x.jpg");
-    // background-size: 1440px auto;
+    background-size: 100% auto;
+  }
+
+  .background__services {
+    background-image: url("../img/bg-city-desktop@2x.jpg");
+    background-size: 100% auto;
   }
 }
