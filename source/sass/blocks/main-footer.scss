@@ -1,8 +1,8 @@
 .main-footer {
+  min-height: 50px;
   margin-top: auto;
   position: relative;
   background-color: #1d1d1d;
-  // bottom: 0;
   width: 100%;
 }
 
@@ -68,7 +68,6 @@
   background-repeat: no-repeat;
   width: 24px;
   height: 14px;
-  // background-image: url("../img/icon-tree-leaf.svg");
 }
 
 .main-footer__link--leaf::before {
