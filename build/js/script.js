@@ -14,9 +14,19 @@
 //   }
 // });
 
+var vacancyToggles = document.querySelectorAll('.vacancy__item button');
 var thumbnailsSlides = document.querySelectorAll('.slide-list__slide-btn');
 var slides = document.querySelectorAll('.slide-list__item');
 var activeMenu = document.querySelectorAll('.site-navigation__item--active');
+
+if (vacancyToggles) {
+  vacancyToggles.forEach(function (item) {
+    item.addEventListener('click', function () {
+      item.parentNode.classList.toggle('vacancy__item--closed');
+      item.textContent = item.parentNode.classList.contains('vacancy__item--closed') ? 'подробнее' : 'скрыть';
+    });
+  });
+}
 
 var addThumbnailClickHandler = function (number) {
   if (thumbnailsSlides && slides) {

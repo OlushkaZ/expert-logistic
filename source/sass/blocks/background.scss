@@ -29,6 +29,15 @@
   position: absolute;
 }
 
+.background__vacancy {
+  background-image: url("../img/bg-bag-desktop@1x.jpg");
+  background-attachment: scroll;
+}
+
+.background__vacancy::before {
+  position: absolute;
+}
+
 @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
   .background__about {
     background-image: url("../img/bg-port-desktop@2x.jpg");
@@ -37,6 +46,11 @@
 
   .background__services {
     background-image: url("../img/bg-city-desktop@2x.jpg");
+    background-size: 100% auto;
+  }
+
+  .background__vacancy {
+    background-image: url("../img/bg-bag-desktop@2x.jpg");
     background-size: 100% auto;
   }
 }
