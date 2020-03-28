@@ -23,7 +23,12 @@ if (vacancyToggles) {
   vacancyToggles.forEach(function (item) {
     item.addEventListener('click', function () {
       item.parentNode.classList.toggle('vacancy__item--closed');
-      item.textContent = item.parentNode.classList.contains('vacancy__item--closed') ? 'подробнее' : 'скрыть';
+      item.children[0].textContent = item.parentNode.classList.contains('vacancy__item--closed') ? 'подробнее' : 'скрыть';
+      // var xxx = item.parentNode;
+      // xxx.querySelector('p').classList.add('hidden-top');
+      // setTimeout(function () {
+      //   xxx.querySelector('p').classList.remove('hidden-top');
+      // }, 100);
     });
   });
 }
