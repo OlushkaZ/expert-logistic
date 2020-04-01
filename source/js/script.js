@@ -14,10 +14,90 @@
 //   }
 // });
 
+var popupResume = document.querySelector('.modal__resume');
+var close = popupResume.querySelector('.modal__close');
+var resumeButtons = document.querySelectorAll('.vacancy__button');
 var vacancyToggles = document.querySelectorAll('.vacancy__item button');
 var thumbnailsSlides = document.querySelectorAll('.slide-list__slide-btn');
 var slides = document.querySelectorAll('.slide-list__item');
 var activeMenu = document.querySelectorAll('.site-navigation__item--active');
+var input = document.querySelector('#resume-phone');
+
+window.addEventListener('DOMContentLoaded', function () {
+  var setCursorPosition = function (pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) {
+      elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+      var range = elem.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  };
+
+  function mask(evt) {
+    // var matrix = evt.target.defaultValue;
+    var matrix = '+7(___)___-__-__';
+    var i = 0;
+    var def = matrix.replace(/\D/g, '');
+    var val = evt.target.value.replace(/\D/g, '');
+    if (def.length >= val.length) {
+      val = def;
+    }
+    matrix = matrix.replace(/[_\d]/g, function () {
+      return val.charAt(i++) || '_';
+    });
+    evt.target.value = matrix;
+    i = matrix.lastIndexOf(val.substr(-1));
+    i = i < matrix.length && matrix !== evt.target.defaultValue ? ++i : matrix.indexOf('_');
+    setCursorPosition(i, evt.target);
+  }
+  input.addEventListener('input', mask);
+  input.addEventListener('focus', function () {
+    input.value = '+7(___)___-__-__';
+  });
+});
+// close.addEventListener('click', function (evt) {
+//   evt.preventDefault();
+//   popupResume.classList.remove('modal__show');
+// });
+
+
+var closePopup = function (evt) {
+  if (popupResume) {
+    evt.preventDefault();
+    if (popupResume.classList.contains('modal__show')) {
+      popupResume.classList.remove('modal__show');
+    }
+  }
+};
+
+close.addEventListener('click', closePopup);
+
+popupResume.addEventListener('click', function (evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt);
+  }
+});
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 27) {
+    closePopup(evt);
+  }
+});
+
+if (resumeButtons) {
+  resumeButtons.forEach(function (item) {
+    var vacancy = item.parentNode.querySelector('.vacancy__item-header').textContent;
+    item.addEventListener('click', function () {
+      popupResume.classList.add('modal__show');
+      var caption = popupResume.querySelector('.resume__caption');
+      caption.textContent = vacancy;
+    });
+  });
+}
 
 if (vacancyToggles) {
   vacancyToggles.forEach(function (item) {

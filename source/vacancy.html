@@ -48,7 +48,7 @@
         <h2 class="vacancy__header">Карьера</h2>
         <ol class="vacancy__list">
             <li class="vacancy__item">
-              <h3>Помощник руководителя транспортного узла, г. Орёл</h3>
+              <h3 class = "vacancy__item-header">Помощник руководителя транспортного узла, г. Орёл</h3>
               <button type="button" class="vacancy__toggle"><span class="vacancy__toggle-text">скрыть</span></button>
               <!-- <div class="vacancy__overflow"> -->
                 <p>Описание вакансиию 18 лет на российском рынке. Одна из ведущих компаний в сфере автотранспортных услуг. Оказываем услуги аренды и комплексного управления вашим автопарком. Мы работаем — вы концентрируетесь на бизнесе. Полный социальный пакет, оплата стоматологии, удобная столовая в офисе.</p>
@@ -56,25 +56,25 @@
             <!-- </div> -->
             </li>
             <li class="vacancy__item">
-              <h3>Помощник руководителя транспортного узла, г. Орёл</h3>
+              <h3 class = "vacancy__item-header">Помощник руководителя транспортного узла, г. Орёл</h3>
               <button type="button" class="vacancy__toggle"><span class="vacancy__toggle-text">скрыть</span></button>
               <p>Описание вакансиию 18 лет на российском рынке. Одна из ведущих компаний в сфере автотранспортных услуг. Оказываем услуги аренды и комплексного управления вашим автопарком. Мы работаем — вы концентрируетесь на бизнесе. Полный социальный пакет, оплата стоматологии, удобная столовая в офисе.</p>
               <a class="button vacancy__button"><span>отправить резюме</span></a>
             </li>
             <li class="vacancy__item">
-              <h3>Руководитель направления «Разработка логистических направлений в СФО», г. Новосибирск</h3>
+              <h3 class = "vacancy__item-header">Руководитель направления «Разработка логистических направлений в СФО», г. Новосибирск</h3>
               <button type="button" class="vacancy__toggle"><span class="vacancy__toggle-text">скрыть</span></button>
               <p>Описание вакансиию 18 лет на российском рынке. Одна из ведущих компаний в сфере автотранспортных услуг. Оказываем услуги аренды и комплексного управления вашим автопарком. Мы работаем — вы концентрируетесь на бизнесе. Полный социальный пакет, оплата стоматологии, удобная столовая в офисе.</p>
               <a class="button vacancy__button"><span>отправить резюме</span></a>
             </li>
             <li class="vacancy__item">
-              <h3>Контент-менеджер в офис, г. Воронеж</h3>
+              <h3 class = "vacancy__item-header">Контент-менеджер в офис, г. Воронеж</h3>
               <button type="button" class="vacancy__toggle"><span class="vacancy__toggle-text">скрыть</span></button>
               <p>Описание вакансиию 18 лет на российском рынке. Одна из ведущих компаний в сфере автотранспортных услуг. Оказываем услуги аренды и комплексного управления вашим автопарком. Мы работаем — вы концентрируетесь на бизнесе. Полный социальный пакет, оплата стоматологии, удобная столовая в офисе.</p>
               <a class="button vacancy__button"><span>отправить резюме</span></a>
             </li>
             <li class="vacancy__item">
-              <h3>Оператор логистического направления, г. Санкт-Петербург</h3>
+              <h3 class = "vacancy__item-header">Оператор логистического направления, г. Санкт-Петербург</h3>
               <button type="button" class="vacancy__toggle"><span class="vacancy__toggle-text">скрыть</span></button>
               <p>Описание вакансиию 18 лет на российском рынке. Одна из ведущих компаний в сфере автотранспортных услуг. Оказываем услуги аренды и комплексного управления вашим автопарком. Мы работаем — вы концентрируетесь на бизнесе. Полный социальный пакет, оплата стоматологии, удобная столовая в офисе.</p>
               <a class="button vacancy__button"><span>отправить резюме</span></a>
@@ -97,6 +97,37 @@
       </div>
     </footer>
   </div>
+  <section class="modal modal__resume">
+    <div class="resume">
+      <h2 class="resume__caption">Отправить резюме</h2>
+      <p class="resume__text">Вы откликаетесь на вакансию </p><p class="resume__vacancy-name"></p>
+      <button class="modal__close" type="button" aria-label="закрыть окно"></button>
+      <form class="resume__form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+        <div>
+        <!-- <p> -->
+          <!-- <label for="resume-name">Ваше имя</label> -->
+          <input id="resume-name" type="text" value="" placeholder="ВАШЕ ИМЯ"  required>
+        <!-- </p> -->
+        <!-- <p> -->
+          <!-- <label for="resume-name">Ваше имя</label> -->
+          <input id="resume-e-mail" type="email" value="" placeholder="ВАШЕ E-MAIL" required>
+        <!-- </p> -->
+        <!-- <p> -->
+          <!-- <label for="resume-name">Ваше имя</label> -->
+          <input id="resume-phone" type="text" value="" placeholder="ВАШ ТЕЛЕФОН" pattern="\+7\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
+        <!-- </p> -->
+        <!-- <p> -->
+          <!-- <label for="resume-name">Ваше имя</label> -->
+          <input id="resume-file" type="file" value="" placeholder="ПРИКРЕПИТЕ РЕЗЮМЕ" required>
+        <!-- </p> -->
+      </div>
+
+        <button type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </section>
   <script src="js/script.js"></script>
 </body>
 

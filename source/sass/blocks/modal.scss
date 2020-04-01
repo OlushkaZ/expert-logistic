@@ -1,0 +1,51 @@
+
+
+.modal {
+  display: none;
+  color: #323232;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.modal__resume {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.modal__show {
+  display: block;
+}
+
+.modal__close {
+  top: 18px;
+  right: 18px;
+  width: 18px;
+  height: 17px;
+  position: absolute;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal__close::before,
+.modal__close::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -1px;
+  width: 22px;
+  height: 2px;
+  background-color: #323232;
+}
+
+.modal__close::before {
+  transform: rotate(45deg);
+}
+
+.modal__close::after {
+  transform: rotate(-45deg);
+}

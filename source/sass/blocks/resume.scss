@@ -1,0 +1,16 @@
+.resume {
+  position: relative;
+  width: 78%;
+  margin: auto;
+  padding: 10% 25% 5% 5%;
+  background-color: #ffffff;
+}
+
+.resume__form div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resume__form input {
+  width: 40%;
+}

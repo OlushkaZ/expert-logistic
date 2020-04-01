@@ -14,21 +14,116 @@
 //   }
 // });
 
+var popupResume = document.querySelector('.modal__resume');
+var close = popupResume.querySelector('.modal__close');
+var resumeButtons = document.querySelectorAll('.vacancy__button');
 var vacancyToggles = document.querySelectorAll('.vacancy__item button');
 var thumbnailsSlides = document.querySelectorAll('.slide-list__slide-btn');
 var slides = document.querySelectorAll('.slide-list__item');
 var activeMenu = document.querySelectorAll('.site-navigation__item--active');
+var input = document.querySelector('#resume-phone');
+
+
+
+window.addEventListener('DOMContentLoaded', function () {
+  var setCursorPosition = function (pos, elem) {
+    elem.focus();
+    if (elem.setSelectionRange) {
+      elem.setSelectionRange(pos, pos);
+    } else if (elem.createTextRange) {
+      var range = elem.createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  };
+
+  var setMask = function (evt) {
+    if (input.value === '') {
+      input.value = '+7(___)___-__-__';
+      setCursorPosition(input.value.match(/_/).index, evt.target);
+    }
+  };
+
+  function mask(evt) {
+    var curpos = evt.target.selectionStart;
+    var matrix = '+7(___)___-__-__';
+    if (curpos < matrix.match(/_/).index) {
+      curpos = matrix.match(/_/).index;
+    }
+    if (!matrix.charAt(curpos).match(/(\d|_)/)) {
+      curpos++;
+    }
+    i = 0;
+    var def = matrix.replace(/\D/g, '');
+    var val = evt.target.value.replace(/\D/g, '');
+    if (def.length >= val.length) {
+      val = def;
+    }
+    matrix = matrix.replace(/[_\d]/g, function () {
+      return val.charAt(i++) || '_';
+    });
+    evt.target.value = matrix;
+    // i = matrix.lastIndexOf(val.substr(-1));
+    // i = i < matrix.length && matrix !== evt.target.defaultValue ? ++i : matrix.indexOf('_');
+    setCursorPosition(curpos, evt.target);
+  }
+  input.addEventListener('input', mask);
+  input.addEventListener('click', function (evt) {
+    if (input.value === '') {
+      input.value = '+7(___)___-__-__';
+      setCursorPosition(input.value.match(/_/).index, evt.target);
+    }
+  });
+});
+
+
+// close.addEventListener('click', function (evt) {
+//   evt.preventDefault();
+//   popupResume.classList.remove('modal__show');
+// });
+
+
+var closePopup = function (evt) {
+  if (popupResume) {
+    evt.preventDefault();
+    if (popupResume.classList.contains('modal__show')) {
+      popupResume.classList.remove('modal__show');
+    }
+  }
+};
+
+close.addEventListener('click', closePopup);
+
+popupResume.addEventListener('click', function (evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt);
+  }
+});
+
+window.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 27) {
+    closePopup(evt);
+  }
+});
+
+if (resumeButtons) {
+  Array.prototype.forEach.call(resumeButtons, function (item) {
+    var vacancy = item.parentNode.querySelector('.vacancy__item-header').textContent;
+    item.addEventListener('click', function () {
+      popupResume.classList.add('modal__show');
+      var caption = popupResume.querySelector('.resume__caption');
+      caption.textContent = vacancy;
+    });
+  });
+}
 
 if (vacancyToggles) {
   vacancyToggles.forEach(function (item) {
     item.addEventListener('click', function () {
       item.parentNode.classList.toggle('vacancy__item--closed');
       item.children[0].textContent = item.parentNode.classList.contains('vacancy__item--closed') ? 'подробнее' : 'скрыть';
-      // var xxx = item.parentNode;
-      // xxx.querySelector('p').classList.add('hidden-top');
-      // setTimeout(function () {
-      //   xxx.querySelector('p').classList.remove('hidden-top');
-      // }, 100);
     });
   });
 }
