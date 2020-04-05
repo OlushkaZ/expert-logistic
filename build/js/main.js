@@ -21,69 +21,47 @@ var vacancyToggles = document.querySelectorAll('.vacancy__item button');
 var thumbnailsSlides = document.querySelectorAll('.slide-list__slide-btn');
 var slides = document.querySelectorAll('.slide-list__item');
 var activeMenu = document.querySelectorAll('.site-navigation__item--active');
-var input = document.querySelector('#resume-phone');
+var inputPhone = document.querySelector('#resume-phone');
+// var inputName = document.querySelector('#resume-name');
+// var inputEMail = document.querySelector('#resume-e-mail');
 
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+window.mask = new window.IMask(inputPhone, maskOptions);
 
-
-window.addEventListener('DOMContentLoaded', function () {
-  var setCursorPosition = function (pos, elem) {
-    elem.focus();
-    if (elem.setSelectionRange) {
-      elem.setSelectionRange(pos, pos);
-    } else if (elem.createTextRange) {
-      var range = elem.createTextRange();
-      range.collapse(true);
-      range.moveEnd('character', pos);
-      range.moveStart('character', pos);
-      range.select();
-    }
+inputPhone.addEventListener('click', function () {
+  maskOptions = {
+    mask: '+{7}(000)000-00-00',
+    lazy: false
   };
-
-  var setMask = function (evt) {
-    if (input.value === '') {
-      input.value = '+7(___)___-__-__';
-      setCursorPosition(input.value.match(/_/).index, evt.target);
-    }
-  };
-
-  function mask(evt) {
-    var curpos = evt.target.selectionStart;
-    var matrix = '+7(___)___-__-__';
-    if (curpos < matrix.match(/_/).index) {
-      curpos = matrix.match(/_/).index;
-    }
-    if (!matrix.charAt(curpos).match(/(\d|_)/)) {
-      curpos++;
-    }
-    i = 0;
-    var def = matrix.replace(/\D/g, '');
-    var val = evt.target.value.replace(/\D/g, '');
-    if (def.length >= val.length) {
-      val = def;
-    }
-    matrix = matrix.replace(/[_\d]/g, function () {
-      return val.charAt(i++) || '_';
-    });
-    evt.target.value = matrix;
-    // i = matrix.lastIndexOf(val.substr(-1));
-    // i = i < matrix.length && matrix !== evt.target.defaultValue ? ++i : matrix.indexOf('_');
-    setCursorPosition(curpos, evt.target);
-  }
-  input.addEventListener('input', mask);
-  input.addEventListener('click', function (evt) {
-    if (input.value === '') {
-      input.value = '+7(___)___-__-__';
-      setCursorPosition(input.value.match(/_/).index, evt.target);
-    }
-  });
+  window.mask = new window.IMask(inputPhone, maskOptions);
 });
 
-
-// close.addEventListener('click', function (evt) {
-//   evt.preventDefault();
-//   popupResume.classList.remove('modal__show');
+// inputPhone.addEventListener('blur', function () {
+//   if (inputPhone.value === '+7(___)___-__-__') {
+//     // maskOptions.mask = '+{7}(000)000-00-00';
+//     inputPhone.value = '';
+//     maskOptions.lazy = true;
+//     window.mask = new window.IMask(inputPhone, maskOptions);
+//   }
 // });
 
+// inputName.addEventListener('input', function () {
+//   if (inputName.value === '' && inputName.classList.contains('resume__valid')) {
+//     inputName.classList.remove('resume__valid');
+//   } else if (!inputName.classList.contains('resume__valid')) {
+//     inputName.classList.add('resume__valid');
+//   }
+// });
+//
+// inputEMail.addEventListener('input', function () {
+//   if (inputEMail.value === '' && inputEMail.classList.contains('resume__valid')) {
+//     inputEMail.classList.remove('resume__valid');
+//   } else if (!inputEMail.classList.contains('resume__valid')) {
+//     inputEMail.classList.add('resume__valid');
+//   }
+// });
 
 var closePopup = function (evt) {
   if (popupResume) {
@@ -109,11 +87,11 @@ window.addEventListener('keydown', function (evt) {
 });
 
 if (resumeButtons) {
-  Array.prototype.forEach.call(resumeButtons, function (item) {
+  resumeButtons.forEach(function (item) {
     var vacancy = item.parentNode.querySelector('.vacancy__item-header').textContent;
     item.addEventListener('click', function () {
       popupResume.classList.add('modal__show');
-      var caption = popupResume.querySelector('.resume__caption');
+      var caption = popupResume.querySelector('.resume__vacancy-name');
       caption.textContent = vacancy;
     });
   });
