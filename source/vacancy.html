@@ -104,21 +104,18 @@
       <button class="modal__close" type="button" aria-label="закрыть окно"></button>
       <form class="resume__form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
         <div>
-        <!-- <p> -->
-          <!-- <label for="resume-name">Ваше имя</label> -->
-          <input id="resume-name" type="text" value="" placeholder="ВАШЕ ИМЯ" required>
-          <label for="resume-name">&nbsp;</label>
-        <!-- </p> -->
-        <!-- <p> -->
-          <!-- <label for="resume-name">Ваше имя</label> -->
+        <p>
+          <input id="resume-name" type="text" value="" placeholder="ВАШЕ ИМЯ" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" required>
+          <label for="resume-name"></label>
+        </p>
+        <p>
           <input id="resume-e-mail" type="email" value="" placeholder="ВАШЕ E-MAIL" required>
-          <label for="resume-e-mail">&nbsp;</label>
-        <!-- </p> -->
-        <!-- <p> -->
-          <!-- <label for="resume-name">Ваше имя</label> -->
-          <input id="resume-phone" type="text" value="" placeholder="ВАШ ТЕЛЕФОН" required>
-          <label for="resume-e-mail">&nbsp;</label>
-        <!-- </p> -->
+          <label for="resume-e-mail"></label>
+        </p>
+        <p>
+          <input id="resume-phone" type="text" value="" placeholder="ВАШ ТЕЛЕФОН" pattern="\+7[\(]\d{3}[\)]\d{3}[-]\d{2}[-]\d{2}" required>
+          <label for="resume-phone"></label>
+        </p>
         <!-- <p> -->
           <!-- <label for="resume-name">Ваше имя</label> -->
           <input id="resume-file" type="file" value="" placeholder="ПРИКРЕПИТЕ РЕЗЮМЕ" required>
