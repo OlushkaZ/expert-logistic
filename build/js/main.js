@@ -32,17 +32,32 @@ var fileLoaderDeleteFile = document.querySelector('.file-loader_delete-file');
 
 inputFile.addEventListener('change', function (evt) {
   if (evt.target.files && evt.target.files.length >= 1) {
-    if (1 === 0) {
-      // если формат файла подходит
+    var FILE_TYPES = ['txt', 'doc', 'docx', 'pdf'];
+    var file = evt.target.files[0];
+    var fileName = file.name.toLowerCase();
+    var matches = FILE_TYPES.some(function (it) {
+      return fileName.endsWith(it);
+    });
+    if (matches) {
       fileLoaderHandler.classList.add('display-none');
-      fileLoaderButton.children[0].textContent = evt.target.files[0].name;
+      fileLoaderButton.children[0].textContent = fileName;
       fileLoaderButton.classList.remove('display-none');
+      fileLoaderDeleteFile.classList.remove('display-none');
     } else {
       fileLoaderButton.classList.remove('display-none');
+      fileLoaderButton.children[0].textContent = 'не удалось загрузить файл';
       fileLoaderHandler.textContent = 'попробовать снова?';
       fileLoaderDeleteFile.classList.add('display-none');
     }
   }
+});
+
+fileLoaderDeleteFile.addEventListener('click', function () {
+  inputFile.value = '';
+  fileLoaderHandler.classList.remove('display-none');
+  fileLoaderHandler.textContent = 'прикрепите резюме';
+  fileLoaderButton.children[0].textContent = '';
+  fileLoaderButton.classList.add('display-none');
 });
 
 var maskPhoneOptions = {
