@@ -24,8 +24,26 @@ var activeMenu = document.querySelectorAll('.site-navigation__item--active');
 var resumeForm = document.querySelector('.resume__form');
 var inputPhone = resumeForm.querySelector('#resume-phone');
 var inputName = resumeForm.querySelector('#resume-name');
-var inputEMail = document.querySelector('#resume-e-mail');
+var inputEMail = resumeForm.querySelector('#resume-e-mail');
+var inputFile = resumeForm.querySelector('#resume-file');
+var fileLoaderHandler = document.querySelector('.file-loader_handler');
+var fileLoaderButton = document.querySelector('.file-loader_button');
+var fileLoaderDeleteFile = document.querySelector('.file-loader_delete-file');
 
+inputFile.addEventListener('change', function (evt) {
+  if (evt.target.files && evt.target.files.length >= 1) {
+    if (1 === 0) {
+      // если формат файла подходит
+      fileLoaderHandler.classList.add('display-none');
+      fileLoaderButton.children[0].textContent = evt.target.files[0].name;
+      fileLoaderButton.classList.remove('display-none');
+    } else {
+      fileLoaderButton.classList.remove('display-none');
+      fileLoaderHandler.textContent = 'попробовать снова?';
+      fileLoaderDeleteFile.classList.add('display-none');
+    }
+  }
+});
 
 var maskPhoneOptions = {
   mask: '+{7}(000)000-00-00'
@@ -126,7 +144,7 @@ window.addEventListener('keydown', function (evt) {
 });
 
 if (resumeButtons) {
-  resumeButtons.forEach(function (item) {
+  Array.prototype.forEach.call(resumeButtons, function (item) {
     var vacancy = item.parentNode.querySelector('.vacancy__item-header').textContent;
     item.addEventListener('click', function () {
       popupResume.classList.add('modal__show');

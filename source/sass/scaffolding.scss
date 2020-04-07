@@ -40,6 +40,7 @@
 
 input[type="radio"].visually-hidden,
 input[type="checkbox"].visually-hidden,
+input[type="file"].visually-hidden,
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -100,6 +101,6 @@ img {
   opacity: 0;
 }
 
-.display-none {
-  display: none;
-}
+// .display-none {
+//   display: none;
+// }

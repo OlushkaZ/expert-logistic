@@ -217,6 +217,44 @@
       </div>
     </footer>
   </div>
+  <section class="modal modal__resume">
+    <div class="resume">
+      <h2 class="resume__caption">Отправить резюме</h2>
+      <p class="resume__text">Вы откликаетесь на вакансию </p><p class="resume__vacancy-name"></p>
+      <button class="modal__close" type="button" aria-label="закрыть окно"></button>
+      <form class="resume__form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
+        <div>
+        <p>
+          <input id="resume-name" type="text" value="" placeholder="ВАШЕ ИМЯ" pattern="^[a-zA-ZА-Яа-яЁё\s]+$" required>
+          <label for="resume-name"></label>
+        </p>
+        <p>
+          <input id="resume-e-mail" type="email" value="" placeholder="ВАШЕ E-MAIL" required>
+          <label for="resume-e-mail"></label>
+        </p>
+        <p>
+          <input id="resume-phone" type="text" value="" placeholder="ВАШ ТЕЛЕФОН" pattern="\+7[\(]\d{3}[\)]\d{3}[-]\d{2}[-]\d{2}" required>
+          <label for="resume-phone"></label>
+        </p>
+        <!-- <p> -->
+          <!-- <label for="resume-name">Ваше имя</label> -->
+        <div class="file-loader">
+          <input class="visually-hidden" id="resume-file" type="file" value="" required>
+          <div class="file-loader_button display-none">
+            <span>не удалось загрузить файл</span>
+            <button></button>
+          </div>
+          <label class="file-loader_handler" for="resume-file">прикрепите резюме</label>
+        </div>
+        <!-- </p> -->
+      </div>
+
+        <button type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </section>
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
   <!-- <script src="js/script.js"></script> -->

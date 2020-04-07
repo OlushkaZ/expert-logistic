@@ -346,6 +346,7 @@ template {
 
 input[type="radio"].visually-hidden,
 input[type="checkbox"].visually-hidden,
+input[type="file"].visually-hidden,
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -405,9 +406,6 @@ img {
 
 .opacity-none {
   opacity: 0; }
-
-.display-none {
-  display: none; }
 
 .button {
   display: inline-block;
@@ -1524,6 +1522,12 @@ label::before {
 .resume__form input.resume__invalid {
   border-bottom: 1px solid red; }
 
+.file-loader {
+  outline: 1px solid green; }
+
+.file-loader_button.display-none {
+  display: none; }
+
 .background {
   position: relative;
   background-color: #717171;
@@ -1612,3 +1616,6 @@ label::before {
 .modal__close::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg); }
+
+.display-none {
+  display: none; }

@@ -182,7 +182,14 @@
         </p>
         <!-- <p> -->
           <!-- <label for="resume-name">Ваше имя</label> -->
-          <input id="resume-file" type="file" value="" placeholder="ПРИКРЕПИТЕ РЕЗЮМЕ" required="">
+        <div class="file-loader">
+          <input class="visually-hidden" id="resume-file" type="file" value="" required="">
+          <div class="file-loader_button display-none">
+            <span>не удалось загрузить файл</span>
+            <button class="file-loader_delete-file"></button>
+          </div>
+          <label class="file-loader_handler" for="resume-file">прикрепите резюме</label>
+        </div>
         <!-- </p> -->
       </div>
 
