@@ -30,8 +30,9 @@ var fileLoaderHandler = document.querySelector('.file-loader_handler');
 var fileLoaderButton = document.querySelector('.file-loader_button');
 var fileLoaderDeleteFile = document.querySelector('.file-loader_delete-file');
 
+/*eslint-disable */
 if (!String.prototype.endsWith) {
-  String.prototype.endsWith = function(searchString, position) {
+  String.prototype.endsWith = function (searchString, position) {
     var subjectString = this.toString();
       if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {
         position = subjectString.length;
@@ -41,6 +42,7 @@ if (!String.prototype.endsWith) {
       return lastIndex !== -1 && lastIndex === position;
   };
 }
+/* eslint-enable */
 
 inputFile.addEventListener('change', function (evt) {
   if (evt.target.files && evt.target.files.length >= 1) {
@@ -53,12 +55,16 @@ inputFile.addEventListener('change', function (evt) {
     if (matches) {
       fileLoaderHandler.classList.add('display-none');
       fileLoaderButton.children[0].textContent = fileName;
+      fileLoaderButton.classList.remove('file-loader_button--error');
       fileLoaderButton.classList.remove('display-none');
       fileLoaderDeleteFile.classList.remove('display-none');
     } else {
+      inputFile.value = '';
       fileLoaderButton.classList.remove('display-none');
       fileLoaderButton.children[0].textContent = 'не удалось загрузить файл';
+      fileLoaderButton.classList.add('file-loader_button--error');
       fileLoaderHandler.textContent = 'попробовать снова?';
+      fileLoaderHandler.classList.add('file-loader_handler--again');
       fileLoaderDeleteFile.classList.add('display-none');
     }
   }
@@ -68,6 +74,7 @@ fileLoaderDeleteFile.addEventListener('click', function () {
   inputFile.value = '';
   fileLoaderHandler.classList.remove('display-none');
   fileLoaderHandler.textContent = 'прикрепите резюме';
+  fileLoaderHandler.classList.remove('file-loader_handler--again');
   fileLoaderButton.children[0].textContent = '';
   fileLoaderButton.classList.add('display-none');
 });
