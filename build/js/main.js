@@ -30,6 +30,18 @@ var fileLoaderHandler = document.querySelector('.file-loader_handler');
 var fileLoaderButton = document.querySelector('.file-loader_button');
 var fileLoaderDeleteFile = document.querySelector('.file-loader_delete-file');
 
+if (!String.prototype.endsWith) {
+  String.prototype.endsWith = function(searchString, position) {
+    var subjectString = this.toString();
+      if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {
+        position = subjectString.length;
+      }
+      position -= searchString.length;
+      var lastIndex = subjectString.indexOf(searchString, position);
+      return lastIndex !== -1 && lastIndex === position;
+  };
+}
+
 inputFile.addEventListener('change', function (evt) {
   if (evt.target.files && evt.target.files.length >= 1) {
     var FILE_TYPES = ['txt', 'doc', 'docx', 'pdf'];
