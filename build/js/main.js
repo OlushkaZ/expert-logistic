@@ -61,7 +61,7 @@ inputFile.addEventListener('change', function (evt) {
     } else {
       inputFile.value = '';
       fileLoaderButton.classList.remove('display-none');
-      fileLoaderButton.children[0].textContent = 'не удалось загрузить файл';
+      fileLoaderButton.children[0].textContent = 'Не удалось загрузить файл';
       fileLoaderButton.classList.add('file-loader_button--error');
       fileLoaderHandler.textContent = 'попробовать снова?';
       fileLoaderHandler.classList.add('file-loader_handler--again');

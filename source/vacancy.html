@@ -100,7 +100,9 @@
   <section class="modal modal__resume">
     <div class="resume">
       <h2 class="resume__caption">Отправить резюме</h2>
-      <p class="resume__text">Вы откликаетесь на вакансию </p><p class="resume__vacancy-name"></p>
+      <div class = "resume__text-wrapper">
+        <p class="resume__text">Вы откликаетесь на вакансию </p><p class="resume__vacancy-name"></p>
+      </div>
       <button class="modal__close" type="button" aria-label="закрыть окно"></button>
       <form class="resume__form" action="#" method="post" enctype="multipart/form-data" autocomplete="off">
         <div>
@@ -129,7 +131,7 @@
         <!-- </p> -->
       </div>
 
-        <button type="submit">
+        <button class = "button" type="submit">
           Отправить
         </button>
       </form>
