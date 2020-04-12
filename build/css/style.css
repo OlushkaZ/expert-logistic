@@ -1555,6 +1555,7 @@ label::before {
   background-image: url("../img/icon-good.svg"); }
 
 .resume__form input.resume__invalid:not(:focus) + label::after {
+  content: "";
   position: absolute;
   top: -3px;
   left: -20px;
@@ -1581,6 +1582,16 @@ label::before {
   width: 18px;
   height: 14px;
   background-image: url("../img/icon-mail.svg"); }
+
+.resume__form button[type="submit"]:hover {
+  border: 1px solid #64dd17;
+  outline: none; }
+
+.resume__form button.resume__mistake:hover {
+  border: 1px solid black; }
+
+.resume__mistake {
+  opacity: 0.25; }
 
 .file-loader {
   -webkit-box-align: center;

@@ -29,6 +29,7 @@ var inputFile = resumeForm.querySelector('#resume-file');
 var fileLoaderHandler = document.querySelector('.file-loader_handler');
 var fileLoaderButton = document.querySelector('.file-loader_button');
 var fileLoaderDeleteFile = document.querySelector('.file-loader_delete-file');
+var buttonSubmit = document.querySelector('button[type="submit"]');
 
 /*eslint-disable */
 if (!String.prototype.endsWith) {
@@ -58,6 +59,9 @@ inputFile.addEventListener('change', function (evt) {
       fileLoaderButton.classList.remove('file-loader_button--error');
       fileLoaderButton.classList.remove('display-none');
       fileLoaderDeleteFile.classList.remove('display-none');
+      if (noMistake()) {
+        buttonSubmit.classList.remove('resume__mistake');
+      }
     } else {
       inputFile.value = '';
       fileLoaderButton.classList.remove('display-none');
@@ -66,6 +70,7 @@ inputFile.addEventListener('change', function (evt) {
       fileLoaderHandler.textContent = 'попробовать снова?';
       fileLoaderHandler.classList.add('file-loader_handler--again');
       fileLoaderDeleteFile.classList.add('display-none');
+      buttonSubmit.classList.add('resume__mistake');
     }
   }
 });
@@ -77,6 +82,8 @@ fileLoaderDeleteFile.addEventListener('click', function () {
   fileLoaderHandler.classList.remove('file-loader_handler--again');
   fileLoaderButton.children[0].textContent = '';
   fileLoaderButton.classList.add('display-none');
+  fileLoaderDeleteFile.classList.add('display-none');
+  buttonSubmit.classList.add('resume__mistake');
 });
 
 var maskPhoneOptions = {
@@ -110,26 +117,53 @@ var checkInputCaption = function (input) {
   }
 };
 
+var noMistake = function () {
+  var result = true;
+  if (inputName.classList.contains('resume__invalid') || inputName.value === '') {
+    result = false;
+  }
+  if (inputEMail.classList.contains('resume__invalid') || inputEMail.value === '') {
+    result = false;
+  }
+  if (inputPhone.classList.contains('resume__invalid') || inputPhone.value === '') {
+    result = false;
+  }
+  if (fileLoaderDeleteFile.classList.contains('display-none')) {
+    result = false;
+  }
+  return result;
+};
+
 inputName.addEventListener('blur', function () {
   deleteInvalid(inputName);
   inputName.checkValidity();
   checkInputCaption(inputName);
+  if (noMistake()) {
+    buttonSubmit.classList.remove('resume__mistake');
+  }
 });
 
 inputEMail.addEventListener('blur', function () {
   deleteInvalid(inputEMail);
   inputEMail.checkValidity();
   checkInputCaption(inputEMail);
+  if (noMistake()) {
+    buttonSubmit.classList.remove('resume__mistake');
+  }
 });
 
 inputPhone.addEventListener('blur', function () {
   deleteInvalid(inputPhone);
   inputPhone.checkValidity();
   checkInputCaption(inputPhone);
+  if (noMistake()) {
+    buttonSubmit.classList.remove('resume__mistake');
+  }
 });
 
 
 resumeForm.addEventListener('invalid', function (evt) {
+  buttonSubmit.classList.add('resume__mistake');
   var lab = resumeForm.querySelector('label[for=' + evt.target.id + ']');
   if (evt.target.value) {
     evt.target.classList.add('resume__invalid');
